@@ -31,12 +31,14 @@ jobs:
         env:
           NEXT_PUBLIC_AZURE_QA_ENDPOINT: ${{ secrets.NEXT_PUBLIC_AZURE_QA_ENDPOINT }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          TO_EMAIL: ${{ secrets.TO_EMAIL }}
 
       - name: Build
         run: npm run build
         env:
           NEXT_PUBLIC_AZURE_QA_ENDPOINT: ${{ secrets.NEXT_PUBLIC_AZURE_QA_ENDPOINT }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          TO_EMAIL: ${{ secrets.TO_EMAIL }}
 
       - name: Build And Deploy
         id: builddeploy

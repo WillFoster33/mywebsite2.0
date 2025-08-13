@@ -4,7 +4,7 @@ const config = {
   subcopy: 'Computer Science & Data Science student focused on ML-backed products, motion, and polished UX.',
   description: 'Will Foster — personal website showcasing projects, experience, and contact.',
   avatar: '/background/Headshot2.png',
-  about: 'I’m a CS + DS student at the University of Wisconsin–Madison (’26) from Ann Arbor. I build fast, accessible interfaces and ML‑powered tools that feel crisp and intentional. I love keeping up with new tech and I love sports.',
+  about: 'I’m a CS + DS student at the University of Wisconsin–Madison (’26) from Ann Arbor, Michigan. I build fast, accessible interfaces and ML‑powered tools that feel crisp and intentional. I love keeping up with new tech and I love sports.',
   aboutHighlights: [
     'Front-end engineering with TypeScript + React',
     'Motion-conscious, accessible UI design',

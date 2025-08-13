@@ -16,8 +16,8 @@ export function Experience() {
 					item.company === 'Ford Motor Company' ||
 					item.company === 'Big Bear Adventures' ||
 					item.company === 'Ann Arbor Golf and Outing'
-				const isSmaller = item.company === 'Quanta (Startup)'
-				const sizeClass = isBigger ? 'h-16' : isSmaller ? 'h-10' : 'h-12'
+				const isSmaller = item.company === 'Quanta (Startup)' || item.company === 'ArcTwo'
+				const sizeClass = isBigger ? 'h-16' : isSmaller ? 'h-9' : 'h-12'
 				return (
 					<article key={`${item.company}-${item.period}`} className="glass-panel rounded-2xl p-5">
 						<div className="flex items-center justify-between gap-4">
