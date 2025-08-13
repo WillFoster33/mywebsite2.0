@@ -26,7 +26,7 @@ export default function HomePage() {
     <main id="content" className="relative">
       <Navbar />
 
-      <motion.div variants={containerVariants} initial="hidden" animate="show" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <motion.div variants={containerVariants} initial={prefersReducedMotion ? false : 'hidden'} animate="show" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Hero />
 
         <Section id="about" title="About">

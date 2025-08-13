@@ -9,7 +9,7 @@ export function Hero() {
   return (
     <section className="relative flex items-center justify-center min-h-[calc(100vh-4rem)] pt-8 pb-16 sm:pt-10 sm:pb-20">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: prefersReducedMotion ? 0 : 0.6 }}
         className="relative glass-panel specular-stripe rounded-3xl p-8 sm:p-12 text-center"
