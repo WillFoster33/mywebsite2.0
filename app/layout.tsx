@@ -38,7 +38,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(body.variable, display.variable, 'min-h-screen bg-black text-white font-[family:var(--font-body)]')}>        
+      <head>
+        <link rel="preload" as="image" href="/background/bg2.jpg" />
+      </head>
+      <body className={cn(body.variable, display.variable, 'min-h-screen bg-[#0b0f14] text-white font-[family:var(--font-body)]')}>        
         <a href="#content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:glass-button focus:px-3 focus:py-1.5">Skip to content</a>
         {/* Background */}
         <Background />

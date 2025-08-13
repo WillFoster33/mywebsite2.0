@@ -1,7 +1,7 @@
 import config from '@/config'
 
 const fallbackLogoMap: Record<string, string> = {
-  'Ford Motor Company': '/background/fordtrans.png',
+  'Ford Motor Company': '/background/ford-logo.png',
   'Lawrence AI': '/background/lawrenceai.jpg',
   'Quanta (Startup)': '/background/q.png',
   'ArcTwo': '/background/ArcaTwo-Logo.svg',
@@ -13,12 +13,11 @@ export function Experience() {
       {config.experience?.map((item) => {
         const logoSrc = (item as any).logo || fallbackLogoMap[item.company]
         const sizeClass = item.company === 'Ford Motor Company' || item.company === 'Lawrence AI' ? 'h-16' : item.company === 'ArcTwo' || item.company === 'Quanta (Startup)' ? 'h-10' : 'h-12'
-        const isScale = item.company === 'Scale AI/Outlier AI'
         return (
           <article key={`${item.company}-${item.period}`} className="glass-panel rounded-2xl p-5">
             <div className="flex items-center justify-between gap-4">
               <div className="min-w-0">
-                <h3 className={`text-white/90 ${isScale ? 'text-lg sm:text-xl' : 'text-base'} font-medium`}>{item.role} — {item.company}</h3>
+                <h3 className="text-white/90 text-lg sm:text-xl font-medium">{item.role} — {item.company}</h3>
                 {item.summary ? <p className="mt-2 text-white/75 text-sm">{item.summary}</p> : null}
                 {item.tech?.length ? (
                   <div className="mt-3 flex flex-wrap gap-2">

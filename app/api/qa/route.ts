@@ -5,7 +5,7 @@ export async function POST(req: Request) {
     const { query, history } = await req.json()
     if (!query) return NextResponse.json({ ok: false, error: 'Missing query' }, { status: 400 })
 
-    const endpoint = process.env.AZURE_QA_ENDPOINT // e.g. https://port-pipeline.azurewebsites.net/api/http_trigger
+    const endpoint = process.env.AZURE_QA_ENDPOINT // e.g. https://.../http_trigger[?code=...]
     if (!endpoint) {
       return NextResponse.json({ ok: false, error: 'Service not configured' }, { status: 500 })
     }
@@ -13,15 +13,24 @@ export async function POST(req: Request) {
     const res = await fetch(endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      // If your function requires a code, append it to the endpoint via env (e.g. endpoint?code=...)
       body: JSON.stringify({ query, history }),
-      // No credentials from client are forwarded
+      // mode: 'no-cors' is not applicable server-side; rely on server-side fetch
     })
 
-    const data = await res.json().catch(() => ({}))
-    if (!res.ok) return NextResponse.json({ ok: false, error: data?.error || 'Upstream error' }, { status: 500 })
+    let data: any = null
+    try {
+      data = await res.json()
+    } catch {
+      // upstream returned non-JSON
+    }
+
+    if (!res.ok) {
+      const message = data?.error || `Upstream ${res.status} ${res.statusText}`
+      return NextResponse.json({ ok: false, error: message }, { status: 500 })
+    }
+
     return NextResponse.json({ ok: true, response: data?.response ?? '' })
-  } catch (e) {
-    return NextResponse.json({ ok: false, error: 'Failed to reach service' }, { status: 500 })
+  } catch (e: any) {
+    return NextResponse.json({ ok: false, error: e?.message || 'Failed to reach service' }, { status: 500 })
   }
 } 
