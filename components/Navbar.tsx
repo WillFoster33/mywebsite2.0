@@ -29,7 +29,7 @@ export function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 h-16">
       <div className="glass-panel relative rounded-b-2xl h-16 flex items-center justify-between px-3 sm:px-4">
         <a href="/" aria-label="Home" className="rounded-md px-2 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60">
-          <img src="/background/wf-logo-transparent.png" alt="WF logo" className="h-7 sm:h-8 w-auto" />
+          <img src="/background/wf-logo-transparent.png" alt="WF logo" className="h-8 sm:h-9 w-auto" />
         </a>
 
         {/* Desktop nav */}
