@@ -30,11 +30,13 @@ jobs:
         run: npm ci
         env:
           NEXT_PUBLIC_AZURE_QA_ENDPOINT: ${{ secrets.NEXT_PUBLIC_AZURE_QA_ENDPOINT }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
 
       - name: Build
         run: npm run build
         env:
           NEXT_PUBLIC_AZURE_QA_ENDPOINT: ${{ secrets.NEXT_PUBLIC_AZURE_QA_ENDPOINT }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
 
       - name: Build And Deploy
         id: builddeploy
