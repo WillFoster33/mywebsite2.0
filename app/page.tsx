@@ -37,7 +37,7 @@ export default function HomePage() {
               )}
               <div>
                 <h3 className="text-xl font-semibold text-white/90">Hi, I'm Will</h3>
-                <p className="mt-2 text-white/80">I'm a CS + DS student at the University of Wisconsin–Madison ('26) from Ann Arbor.</p>
+                <p className="mt-2 text-white/80">I'm a CS + DS student at the University of Wisconsin–Madison ('26) from Ann Arbor, Michigan.</p>
               </div>
             </div>
             <div className="glass-panel rounded-3xl p-6 md:p-8 space-y-6">

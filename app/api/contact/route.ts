@@ -17,7 +17,7 @@ export async function POST(req: Request) {
 
     await resend.emails.send({
       from: 'Portfolio <no-reply@resend.dev>',
-      to: process.env.TO_EMAIL || 'wjfoster2@wisc.edu',
+      to: process.env.TO_EMAIL || 'foster.will@gmail.com',
       subject: `New message from ${name}`,
       replyTo: email,
       text: message,

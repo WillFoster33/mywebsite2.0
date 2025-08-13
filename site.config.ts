@@ -36,7 +36,7 @@ const config = {
       role: 'Software Engineering Intern',
       period: 'May 2025 — Aug 2025',
       summary: '',
-      tech: ['Python', 'ML'],
+      tech: ['Python', 'ML', 'Vertex AI Workbench'],
       logo: '/background/ford.png',
     },
     {
@@ -44,7 +44,7 @@ const config = {
       role: 'Software Engineering Intern',
       period: 'Feb 2025 — May 2025',
       summary: '',
-      tech: ['RAG', 'Vector Search', 'LLM'],
+      tech: ['RAG', 'Hybrid Search', 'Azure AI Search'],
       logo: '/background/lawrenceai.jpg',
     },
     {
@@ -52,7 +52,7 @@ const config = {
       role: 'Software Engineer Intern',
       period: 'May 2024 — Present',
       summary: '',
-      tech: ['ETL', 'CI/CD', 'RAG'],
+      tech: ['ETL', 'CI/CD', 'LangGraph'],
       logo: '/background/q.png',
     },
     {
@@ -68,7 +68,7 @@ const config = {
       role: 'Software Engineer for Training AI',
       period: 'Apr 2024 — Jul 2024',
       summary: '',
-      tech: ['AI', 'Evaluation'],
+      tech: ['AI', 'Evaluation', 'Critial Analysis'],
       logo: '/background/Scale_AI.svg',
     },
     {
