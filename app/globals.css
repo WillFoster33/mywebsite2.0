@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: 210 90% 56%;
+  --accent-foreground: 0 0% 100%;
+  --glass-bg: 0 0% 100% / 0.10;
+  --glass-border: 0 0% 100% / 0.20;
+  --glass-highlight: 0 0% 100% / 0.35;
+}
+
+[data-theme="dark"] {
+  --accent: 210 90% 60%;
+  --accent-foreground: 0 0% 100%;
+  --glass-bg: 0 0% 0% / 0.20;
+  --glass-border: 0 0% 100% / 0.16;
+  --glass-highlight: 0 0% 100% / 0.25;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+* { @apply antialiased selection:bg-accent/20 selection:text-accent-foreground; }
+
+body {
+  @apply min-h-screen text-white bg-black/80;
+}
+
+/* Vignette overlay utility */
+.vignette-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(80% 60% at 50% 40%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.35) 60%, rgba(0,0,0,0.65) 100%);
+}
+
+/* Specular highlight stripe utility for glass */
+.specular-stripe::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(110deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.18) 50%, rgba(255,255,255,0) 80%);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* Reduce heavy effects on small screens */
+@media (max-width: 640px) {
+  .glass-panel { backdrop-filter: blur(16px) saturate(120%); }
+} 
