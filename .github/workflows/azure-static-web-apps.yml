@@ -28,9 +28,13 @@ jobs:
 
       - name: Install deps
         run: npm ci
+        env:
+          NEXT_PUBLIC_AZURE_QA_ENDPOINT: ${{ secrets.NEXT_PUBLIC_AZURE_QA_ENDPOINT }}
 
       - name: Build
         run: npm run build
+        env:
+          NEXT_PUBLIC_AZURE_QA_ENDPOINT: ${{ secrets.NEXT_PUBLIC_AZURE_QA_ENDPOINT }}
 
       - name: Build And Deploy
         id: builddeploy
