@@ -43,6 +43,8 @@ export default function QA() {
   const [isThinking, setIsThinking] = useState(false)
   const bottomRef = useRef<HTMLDivElement | null>(null)
 
+  const endpoint = process.env.NEXT_PUBLIC_AZURE_QA_ENDPOINT
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!question.trim()) return
@@ -54,7 +56,8 @@ export default function QA() {
     setIsThinking(true)
 
     try {
-      const response = await fetch('/api/qa', {
+      if (!endpoint) throw new Error('Q&A service not configured')
+      const response = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -64,7 +67,7 @@ export default function QA() {
       })
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
       const json = await response.json()
-      const full = json?.response as string
+      const full = json?.response || json?.message || ''
       if (full) {
         for (let i = 0; i < full.length; i++) {
           await new Promise((r) => setTimeout(r, 16))

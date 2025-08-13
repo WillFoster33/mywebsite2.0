@@ -37,7 +37,7 @@ const config = {
       period: 'May 2025 — Aug 2025',
       summary: '',
       tech: ['Python', 'ML'],
-      logo: '/background/fordtrans.png',
+      logo: '/background/ford.png',
     },
     {
       company: 'Lawrence AI',
@@ -60,7 +60,7 @@ const config = {
       role: 'Software Engineer',
       period: 'May 2024 — Sep 2024',
       summary: '',
-      tech: ['React', 'AI'],
+      tech: ['Full Stack', 'AI', 'Azure'],
       logo: '/background/ArcaTwo-Logo.svg',
     },
     {
@@ -68,7 +68,7 @@ const config = {
       role: 'Software Engineer for Training AI',
       period: 'Apr 2024 — Jul 2024',
       summary: '',
-      tech: ['AI', 'Evaluation', 'Communication'],
+      tech: ['AI', 'Evaluation'],
       logo: '/background/Scale_AI.svg',
     },
     {
@@ -76,8 +76,8 @@ const config = {
       role: 'Chauffeur',
       period: 'Jun 2023 — Aug 2023',
       summary: '',
-      tech: ['Customer Service'],
-      logo: '/background/bbs.webp',
+      tech: ['Customer Service', 'Communication'],
+      logo: '/background/bba.webp',
     },
     {
       company: 'Ann Arbor Golf and Outing',
@@ -85,7 +85,7 @@ const config = {
       period: 'Jun 2022 — Aug 2022',
       summary: '',
       tech: ['Customer Service', 'Operations'],
-      logo: '/background/aago.webp',
+      logo: '/background/aago.png',
     },
   ],
   projects: [
