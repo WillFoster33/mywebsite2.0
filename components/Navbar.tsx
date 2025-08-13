@@ -65,13 +65,13 @@ export function Navbar() {
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="glass-button px-3 py-2 text-sm text-white/90 hover:text-white"
+              className="glass-button w-full flex justify-start px-3 py-2 text-sm text-white/90 hover:text-white"
             >
               {item.label}
             </a>
           ))}
-          <button onClick={() => { setOpen(false); openResume() }} className="glass-button px-3 py-2 text-sm text-white/90 hover:text-white">Resume</button>
-          <button onClick={() => { setOpen(false); openTestimony() }} className="glass-button px-3 py-2 text-sm text-white/90 hover:text-white">Testimony</button>
+          <button onClick={() => { setOpen(false); openResume() }} className="glass-button w-full flex justify-start px-3 py-2 text-sm text-white/90 hover:text-white">Resume</button>
+          <button onClick={() => { setOpen(false); openTestimony() }} className="glass-button w-full flex justify-start px-3 py-2 text-sm text-white/90 hover:text-white">Testimony</button>
         </div>
       )}
     </header>
