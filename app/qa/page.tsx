@@ -43,7 +43,7 @@ export default function QA() {
   const [isThinking, setIsThinking] = useState(false)
   const bottomRef = useRef<HTMLDivElement | null>(null)
 
-  const endpoint = process.env.NEXT_PUBLIC_AZURE_QA_ENDPOINT
+  const endpoint = '/api/qa'
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -65,8 +65,13 @@ export default function QA() {
           history: currentHistory.map((item) => `${item.type}: ${item.content}`).join('\n'),
         }),
       })
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
-      const json = await response.json()
+
+      const json = await response.json().catch(() => ({} as any))
+      if (!response.ok || json?.ok === false) {
+        const serverMsg = json?.error ? ` (${json.error})` : ''
+        throw new Error(`HTTP error! status: ${response.status}${serverMsg}`)
+      }
+
       const full = json?.response || json?.message || ''
       if (full) {
         for (let i = 0; i < full.length; i++) {
